@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Customer Urban Forest</string>
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password"> Password doesn\'t match </string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="register">Register</string>
+    <string name="already_a_member_sign_in">Already a member? Sign in</string>
+    <string name="document_selected">Document Selected</string>
+    <string name="select_document">Select Document</string>
+    <string name="others">Others</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="address">Address</string>
+    <string name="name">Name</string>
+    <string name="registration">Registration</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="not_a_member_register">Not a member? Register</string>
+    <string name="ok_capitalize">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_settings">Settings</string>
+    <string name="location_disabled">Location is disabled</string>
+    <string name="location_settings">Location Settings</string>
+
+    <string name="error">Seems like there is a problem with server please try again later.</string>
+    <string name="error_name">Please enter a valid name</string>
+    <string name="error_phone">Please enter a valid phone number</string>
+    <string name="error_add">Please enter a valid address</string>
+    <string name="error_password">Please enter a valid password of at least 4 characters</string>
+    <string name="error_wrong_password">Passwords don\'t match</string>
+    <string name="error_gender">Please select a Gender</string>
+    <string name="error_document">Please select a document</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="dashboard">Main Menu</string>
+    <string name="menu_management">Menu Management</string>
+    <string name="order_management">Order Management</string>
+    <string name="revenue">Revenue</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="logout">Logout</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="product_name">Enter Product Name</string>
+    <string name="product_price">Enter Product price</string>
+    <string name="size">Enter Product Size</string>
+    <string name="discount_price">Enter Product Discount Price</string>
+    <string name="pot_category">Enter Pot Category</string>
+    <string name="pot_size">Enter Pot Size</string>
+    <string name="pot_price">Enter Pot Price</string>
+    <string name="product_description">Enter Description</string>
+    <string name="add">Product Details</string>
+    <string name="add_product_image">Add Product Image</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="update">Update</string>
+    <string name="suppport_theurbanforest_co_in">suppport@theurbanforest.co.in</string>
+    <string name="change_password">Change Password</string>
+    <string name="my_orders">My Orders</string>
+    <string name="my_products">My Products</string>
+    <string name="delete">Delete</string>
+    <string name="error_select_photo">Please select a document</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="products">Products</string>
+    <string name="continue_shopping">CONTINUE SHOPPING</string>
+    <string name="checkout">CHECKOUT</string>
+    <string name="show_cart">Show Cart</string>
+
+</resources>
