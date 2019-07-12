@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_10"
     app:cardCornerRadius="5dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/clOrder"
@@ -17,13 +18,14 @@
 
         <ImageView
             android:id="@+id/ivProductImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:scaleType="fitXY" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ivProductImage"
             android:orientation="vertical">
 
             <TextView
@@ -33,11 +35,11 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:text="Karan Khurana"
                 android:textSize="@dimen/text_size_16sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Karan Khurana" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvTotalOrder"
@@ -46,125 +48,82 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:text="Plants : 10"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvOrderName"
-                tools:text="Plants : 10" />
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderName" />
 
 
             <TextView
                 android:id="@+id/tvOrderAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:text="Rs 1000"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/text_size_16sp"
-                android:visibility="gone"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Rs 1000" />
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivProductImage"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                style="@android:style/Widget.Button.Small"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:gravity="center"
+                android:entries="@array/number_arrays"/>
 
-                <TextView
-                    android:id="@+id/tvOrderQuantity"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Quantity :  "
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textSize="@dimen/text_size_16sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvTotalOrder"
-                    tools:text="Rs 1000" />
 
-                <it.sephiroth.android.library.numberpicker.NumberPicker
-                    android:id="@+id/numberPickerS"
-                    style="@style/NumberPicker.Filled"
-                    android:layout_width="100dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:progress="1"
-                    app:picker_max="100"
-                    app:picker_min="0"
-                    app:picker_orientation="vertical"
-                    app:picker_stepSize="1"
-                    app:picker_tracker="exponential" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:id="@+id/tvOrderSize"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="Size :  "
-                    android:textSize="@dimen/text_size_16sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvTotalOrder"
-                    tools:text="Rs 1000" />
-
-                <it.sephiroth.android.library.numberpicker.NumberPicker
-                    android:id="@+id/numberPickerSize"
-                    style="@style/NumberPicker.Filled"
-                    android:layout_width="100dp"
-                    android:layout_height="25dp"
-                    android:layout_weight="1"
-                    android:progress="1"
-                    app:picker_max="100"
-                    app:picker_min="0"
-                    app:picker_orientation="vertical"
-                    app:picker_stepSize="1"
-                    app:picker_tracker="exponential" />
-            </LinearLayout>
-
+            <com.isapanah.awesomespinner.AwesomeSpinner
+                android:id="@+id/my_spinner1"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:background="#D3D3D3"
+                app:spinnerDirection="ltr"
+                app:spinnerHint="Quantity" />
 
             <TextView
                 android:id="@+id/tvOrderRemove"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:elevation="5dp"
+                android:padding="3dp"
+                android:layout_marginLeft="10dp"
+                android:background="#D3D3D3"
                 android:drawableLeft="@drawable/ic_clear_black_24dp"
                 android:drawablePadding="@dimen/padding_10"
                 android:text="Remove"
+                android:gravity="center"
+                android:layout_gravity="center"
                 android:textColor="#FF0000"
                 android:textSize="@dimen/text_size_16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvOrderQuantity"
                 tools:text="Rs 1000" />
 
-            <TextView
-                android:id="@+id/tvOrderDeliveryAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:textSize="@dimen/text_size_16sp"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvOrderRemove"
-                tools:text="Rs 1000" />
+
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>

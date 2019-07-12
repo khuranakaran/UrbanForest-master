@@ -24,14 +24,13 @@ class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHolder> {
 //    private ConstraintLayout clOrder;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvOrderName, tvTotalOrder, tvOrderAmount, tvOrderPlacedOn, tvOrderDeliveryDate, tvOrderDeliveryAddress;
+        public TextView tvOrderName, tvOrderAmount, tvOrderPlacedOn, tvOrderDeliveryDate, tvOrderDeliveryAddress;
         public ImageView ivProductImage;
 
         public MyViewHolder(View view) {
             super(view);
             ivProductImage = view.findViewById(R.id.ivProductImage);
             tvOrderName = view.findViewById(R.id.tvOrderName);
-            tvTotalOrder = view.findViewById(R.id.tvTotalOrder);
             tvOrderAmount = view.findViewById(R.id.tvOrderAmount);
 //            tvOrderPlacedOn = view.findViewById(R.id.tvOrderPlacedOn);
 //            tvOrderDeliveryDate = view.findViewById(R.id.tvOrderDeliveryDate);
@@ -60,7 +59,7 @@ class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHolder> {
         if (ordersResponse.getData() != null) {
             Glide.with(context).load("http://ved201-001-site1.ftempurl.com/images/" + ordersResponse.getData().get(position).getPimage()).into(holder.ivProductImage);
             holder.tvOrderName.setText(ordersResponse.getData().get(position).getPname());
-            holder.tvTotalOrder.setText(" ₹ " + ordersResponse.getData().get(position).getPrice());
+            holder.tvOrderAmount.setText(" ₹ " + ordersResponse.getData().get(position).getPrice());
 //            holder.tvOrderAmount.setText(" ₹ " + ordersResponse.getData().get(position).getTotalamount());
 //            holder.tvOrderPlacedOn.setText("Order Placed on : " + ordersResponse.getData().get(position).getOdate());
 //            holder.tvOrderPlacedOn.setText("Delivery date : " + ordersResponse.getData().get(position).getDate());

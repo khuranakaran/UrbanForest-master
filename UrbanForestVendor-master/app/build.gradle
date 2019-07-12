@@ -53,6 +53,7 @@ dependencies {
     implementation 'com.github.sephiroth74:NumberSlidingPicker:1.0.3'
     implementation 'androidx.exifinterface:exifinterface:1.0.0-beta01'
     testImplementation 'junit:junit:4.12'
+    implementation 'com.github.sadra:AwesomeSpinner:1.5.1'
 
     implementation('com.theartofdev.edmodo:android-image-cropper:2.7.0') {
         exclude group: 'com.android.support'

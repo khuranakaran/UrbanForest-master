@@ -2,6 +2,7 @@ package com.customer.main.activities;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
@@ -241,10 +242,13 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, just close
                         // the dialog box and do nothing
-                        fragment = new MyCartFragment();
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.llCategory, fragment);
-                        ft.commit();
+                        finish();
+//                        fragment = new MyCartFragment();
+//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                        ft.replace(R.id.llCategory, fragment);
+//                        ft.commit();
+                        startActivity(new Intent(ProductDetailsActivity.this, MainActivity.class).putExtra("fragment", "MyCartFragment"));
+
                     }
                 });
 

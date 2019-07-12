@@ -79,12 +79,25 @@ public class MainActivity extends AppCompatActivity
         navHeaderName = navHeader.findViewById(R.id.navHeaderName);
         navHeaderPhone = navHeader.findViewById(R.id.navHeaderPhone);
 
-        fragment = new CategoriesFragment();
-        //replacing the fragment
-        if (fragment != null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, fragment);
-            ft.commit();
+//        if (getIntent() != null){
+            String fragmentName = getIntent().getStringExtra("fragment");
+
+            if (fragmentName != null){
+                fragment = new MyCartFragment();
+                if (fragment != null) {
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.content_frame, fragment);
+                    ft.commit();
+                }
+            }
+       /* }*/ else {
+            fragment = new CategoriesFragment();
+            //replacing the fragment
+            if (fragment != null) {
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, fragment);
+                ft.commit();
+            }
         }
 
         navHeader.setOnClickListener(view -> {

@@ -39,7 +39,7 @@ public class MyCartFragment  extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //returning our layout file
         //change R.layout.yourlayoutfilename for each of your fragments
-        return inflater.inflate(R.layout.activity_vendor_orders, container, false);
+        return inflater.inflate(R.layout.fragment_my_cart, container, false);
     }
 
     @Override
