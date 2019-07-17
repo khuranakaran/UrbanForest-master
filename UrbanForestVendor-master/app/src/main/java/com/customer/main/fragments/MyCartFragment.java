@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -71,9 +72,9 @@ public class MyCartFragment  extends Fragment implements View.OnClickListener {
 
                         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
 
-//                        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvVendorOrders.getContext(),
-//                                mLayoutManager.getOrientation());
-//                        rvVendorOrders.addItemDecoration(dividerItemDecoration);
+                        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvVendorOrders.getContext(),
+                                mLayoutManager.getOrientation());
+                        rvVendorOrders.addItemDecoration(dividerItemDecoration);
                         rvVendorOrders.setLayoutManager(mLayoutManager);
                         rvVendorOrders.setItemAnimator(new DefaultItemAnimator());
                         rvVendorOrders.setAdapter(mAdapter);

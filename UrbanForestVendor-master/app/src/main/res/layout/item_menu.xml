@@ -20,6 +20,8 @@
             android:id="@+id/ivProductImage"
             android:layout_width="match_parent"
             android:scaleType="fitXY"
+            android:background="@color/colorPrimary"
+            android:padding="1dp"
             android:elevation="5dp"
             android:layout_height="150dp" />
 
@@ -57,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs. 8,999"
-                    android:textStyle="bold"
+                    android:textStyle="bold|italic"
                     android:textColor="#4CAF50"
                     android:textSize="16dp" />
             </LinearLayout>
