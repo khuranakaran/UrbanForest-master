@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -16,6 +17,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -47,7 +49,7 @@ import retrofit2.Response;
 /**
  * @author karan
  */
-public class ProductDetailsActivity extends AppCompatActivity implements View.OnClickListener {
+public class ProductDetailsActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     public TextView tvProductName, tvProductPrice, tvProductDesc, tvProductCategory;
     public ImageView ivProductImage;
@@ -65,6 +67,8 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     List<Datum> data;
     String category_id, category_name;
     Fragment fragment;
+    AppCompatSpinner appCompatSpinnerSize, appCompatSpinnerQuantity;
+    private String size, quantity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,10 +84,14 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         tvProductCategory = findViewById(R.id.tvProductCategory);
         mProgressView = findViewById(R.id.mProgressView);
         cvAddProduct = findViewById(R.id.cvAddProduct);
+        appCompatSpinnerSize = findViewById(R.id.appCompatSpinnerSize);
+        appCompatSpinnerQuantity = findViewById(R.id.appCompatSpinnerQuantity);
 
         findViewById(R.id.btnAddToCart).setOnClickListener(this);
 
 //        llCategory = findViewById(R.id.llCategory);
+
+        appCompatSpinnerSize.setOnItemSelectedListener(this);
 
         if (getIntent().getExtras() != null){
 
@@ -154,8 +162,14 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnAddToCart:
-                addToCart();
-                confirm();
+
+                if (size != null || quantity != null){
+                    addToCart();
+                    confirm();
+                } else {
+                    Toast.makeText(ProductDetailsActivity.this, "Please Select Size and Quantity!!", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
             case R.id.productImage:
                 CropImage.activity()
@@ -230,6 +244,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
         // set dialog message
         alertDialogBuilder
+                .setMessage("Do you want to add this to cart?")
                 .setCancelable(false)
                 .setPositiveButton(R.string.continue_shopping,new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
@@ -261,5 +276,39 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         alertDialog.show();
 
 
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        if (parent.getId() == R.id.appCompatSpinnerSize){
+
+            if (position == 0){
+                Toast.makeText(ProductDetailsActivity.this, "Please Select Size!!", Toast.LENGTH_SHORT).show();
+            } else {
+                size = String.valueOf(position);
+            }
+
+        } else if (parent.getId() == R.id.appCompatSpinnerQuantity){
+            if (position == 0){
+                Toast.makeText(ProductDetailsActivity.this, "Please Select Quantity!!", Toast.LENGTH_SHORT).show();
+            } else {
+                quantity = String.valueOf(position);
+            }
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        if (parent.getId() == R.id.appCompatSpinnerSize){
+
+                Toast.makeText(ProductDetailsActivity.this, "Please Select Size!!", Toast.LENGTH_SHORT).show();
+
+
+        } else if (parent.getId() == R.id.appCompatSpinnerQuantity){
+
+                Toast.makeText(ProductDetailsActivity.this, "Please Select Quantity!!", Toast.LENGTH_SHORT).show();
+
+        }
     }
 }

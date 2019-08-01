@@ -112,7 +112,7 @@
                                 android:textSize="12dp" />
 
                             <androidx.appcompat.widget.AppCompatSpinner
-                                android:id="@+id/sizeSpinner"
+                                android:id="@+id/appCompatSpinnerSize"
                                 style="@style/Widget.AppCompat.Spinner.Underlined"
                                 android:layout_width="110dp"
                                 android:layout_height="35dp"
@@ -125,7 +125,7 @@
 
 
                             <androidx.appcompat.widget.AppCompatSpinner
-                                android:id="@+id/quantitySpinner"
+                                android:id="@+id/appCompatSpinnerQuantity"
                                 style="@style/Widget.AppCompat.Spinner.Underlined"
                                 android:layout_width="110dp"
                                 android:layout_height="35dp"
