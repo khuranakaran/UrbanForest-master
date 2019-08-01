@@ -7,5 +7,5 @@ package com.customer.main.utils;
  */
 public class AppConstants {
 
-    public static String IMAGE_BASE_URL = "http://ved201-001-site1.ftempurl.com/images/";
+    public static String IMAGE_BASE_URL = "http://kavish2510-001-site1.btempurl.com/api/";
 }

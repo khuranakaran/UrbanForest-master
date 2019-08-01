@@ -18,7 +18,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.balsikandar.crashreporter.CrashReporter;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.customer.R;
 import com.customer.base.retrofit.RetrofitClient;
@@ -67,11 +66,6 @@ public class SignupActivity extends BaseActivity implements View.OnClickListener
         signupRequest = new SignupRequest();
         documentList = new ArrayList<>();
 
-        try {
-            // Do your stuff
-        } catch (Exception e) {
-            CrashReporter.logException(e);
-        }
 
     }
 

@@ -111,73 +111,31 @@
                                 android:text="1345 sold in 30 days"
                                 android:textSize="12dp" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="@dimen/margin_10"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:weightSum="2">
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/sizeSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="110dp"
+                                android:layout_height="35dp"
+                                android:elevation="5dp"
+                                android:entries="@array/number_arrays"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/bg_dropdown"
+                                android:paddingLeft="8dp"
+                                android:spinnerMode="dropdown" />
 
-                                <TextView
-                                    android:id="@+id/tvOrderQuantity"
-                                    android:layout_width="50dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_weight="1"
-                                    android:text="Quantity :  "
-                                    android:textSize="@dimen/text_size_16sp"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/tvTotalOrder" />
 
-                                <it.sephiroth.android.library.numberpicker.NumberPicker
-                                    android:id="@+id/numberPickerS"
-                                    style="@style/NumberPicker.Filled"
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_weight="1"
-                                    android:progress="1"
-                                    app:picker_max="100"
-                                    app:picker_min="0"
-                                    app:picker_orientation="vertical"
-                                    app:picker_stepSize="1"
-                                    app:picker_tracker="exponential" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="8dp"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:weightSum="2">
-
-                                <TextView
-                                    android:id="@+id/tvOrderSize"
-                                    android:layout_width="50dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="Size :  "
-                                    android:textSize="@dimen/text_size_16sp"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/tvTotalOrder" />
-
-                                <it.sephiroth.android.library.numberpicker.NumberPicker
-                                    android:id="@+id/numberPickerSize"
-                                    style="@style/NumberPicker.Filled"
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_weight="1"
-                                    android:progress="1"
-                                    app:picker_max="100"
-                                    app:picker_min="0"
-                                    app:picker_orientation="vertical"
-                                    app:picker_stepSize="1"
-                                    app:picker_tracker="exponential" />
-                            </LinearLayout>
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:id="@+id/quantitySpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="110dp"
+                                android:layout_height="35dp"
+                                android:elevation="5dp"
+                                android:entries="@array/quantity_arrays"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:background="@drawable/bg_dropdown"
+                                android:paddingLeft="8dp"
+                                android:spinnerMode="dropdown" />
 
 
                         </LinearLayout>

@@ -3,7 +3,6 @@ package com.customer.main.utils;
 import android.app.Application;
 import android.os.Environment;
 
-import com.balsikandar.crashreporter.CrashReporter;
 
 
 import java.io.File;
@@ -18,6 +17,6 @@ public class UrbanForest extends Application {
     {
         super.onCreate();
         String crashReporterPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "urbanforest.customer";
-        CrashReporter.initialize(this, crashReporterPath);
+//        CrashReporter.initialize(this, crashReporterPath);
     }
 }

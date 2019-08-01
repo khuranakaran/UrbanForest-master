@@ -126,6 +126,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         UrbanForestPrefrences.getInstance(LoginActivity.this).setLoggedIn(true);
                         UrbanForestPrefrences.getInstance(LoginActivity.this).setString(PrefrenceConstants.PHONE, response.body().getData().getPhone());
                         UrbanForestPrefrences.getInstance(LoginActivity.this).setVid(response.body().getData().getVid());
+                        UrbanForestPrefrences.getInstance(LoginActivity.this).setPhone(response.body().getData().getPhone());
+                        UrbanForestPrefrences.getInstance(LoginActivity.this).setName(response.body().getData().getName());
 
                         finish();
                     }  else {

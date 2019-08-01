@@ -15,7 +15,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 public class RetrofitClient {
 
-    private static final String BASE_URL = "http://ved201-001-site1.ftempurl.com/api/";
+    private static final String BASE_URL = "http://kavish2510-001-site1.btempurl.com/api/";
     private static Retrofit retrofit = null;
 
 
